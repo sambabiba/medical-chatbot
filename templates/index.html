@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의료 챗봇</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medical ChatBot</h1>
+            <p>질병 예방 방법과 증상 진단을 도와주는 AI 챗봇입니다</p>
+        </header>
+        
+        <div class="chat-container">
+            <div id="chat-messages">
+                <div class="message bot">
+                    안녕하세요! 저는 의료 정보를 제공하는 챗봇입니다. 어떤 도움이 필요하신가요?<br>
+                    1. 질병 예방 방법을 알고 싶으시면 "[질병명] 예방 방법 알려줘"라고 입력하세요.<br>
+                    2. 증상으로 질병을 알고 싶으시면 "증상: [증상1, 증상2...]"라고 입력하세요.<br>
+                    <strong>주의: 이 챗봇은 의학적 진단을 대체할 수 없습니다. 심각한 증상이 있다면 반드시 의사와 상담하세요.</strong>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="질문을 입력하세요...">
+                <button id="send-btn">전송</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Medical ChatBot - 교육 목적으로만 사용하세요 | <a href="/hospital-search">병원 찾기</a></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

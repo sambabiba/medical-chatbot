@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>병원 검색</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hospital_style.css') }}">
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_api_key }}&libraries=services"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>병원 찾기</h1>
+            <p>병원 이름을 검색하면 위치와 정보를 확인할 수 있습니다</p>
+        </header>
+        
+        <div class="search-container">
+            <!-- 검색 박스 -->
+            <div class="search-box">
+                <input type="text" id="hospital-search" placeholder="병원 이름을 입력하세요...">
+                <button id="search-btn">검색</button>
+                <button id="nearby-btn" class="nearby-btn">내 주변 병원 찾기</button>
+            </div>
+            
+            <!-- 위치 컨트롤 -->
+            <div class="location-controls">
+                <button id="get-location-btn" class="location-btn">내 위치 가져오기</button>
+                <button id="set-location-btn" class="location-btn">지도에서 위치 지정</button>
+                <span class="location-hint">정확한 위치를 지정하려면 지도를 클릭하세요</span>
+            </div>
+            
+            <!-- 위치 상태 표시 -->
+            <div class="location-status" id="location-status"></div>
+            
+            <!-- 지도 컨테이너 -->
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
+            
+            <!-- 위치 정확도 향상 팁 -->
+            <div class="accuracy-tips">
+                <h4>위치 정확도 향상 팁</h4>
+                <ul>
+                    <li>GPS 신호를 개선하기 위해 창가나 실외에서 사용해보세요.</li>
+                    <li>Wi-Fi를 켜면 위치 정확도가 향상됩니다.</li>
+                    <li>모바일 데이터를 활성화하면 더 정확한 위치 정보를 얻을 수 있습니다.</li>
+                    <li>브라우저 설정에서 위치 정보 접근을 항상 허용하도록 설정하세요.</li>
+                    <li>정확한 위치가 필요하면 '지도에서 위치 지정' 버튼을 사용해 수동으로 위치를 설정하세요.</li>
+                </ul>
+            </div>
+            
+            <!-- 병원 검색 결과 목록 -->
+            <div id="hospital-list">
+                <h3>검색 결과</h3>
+                <div id="hospital-results">
+                    <p>병원을 검색하여 결과를 확인하세요.</p>
+                </div>
+            </div>
+            
+            <!-- 병원 상세 정보 -->
+            <div id="hospital-info">
+                <h3>병원 정보</h3>
+                <p>병원을 선택하여 정보를 확인하세요.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Medical ChatBot - <a href="/">챗봇으로 돌아가기</a></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/hospital_script.js') }}"></script>
+</body>
+</html>
